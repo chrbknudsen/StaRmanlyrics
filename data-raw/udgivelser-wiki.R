@@ -38,4 +38,14 @@ live_contributions                     <- tabeller[[27]]
 guest_apperances                       <- tabeller[[28]]
 remixes_and_alternate_versions         <- tabeller[[29]]
 
+test <- primary_studio_albums %>% select(Title, details=`Album details`) %>%
+  filter(str_detect(details, "Released")) %>%
+  mutate(year = str_extract(details, "\\d{4}")) %>%
+  mutate(spot_string = str_c("year:",year, " artist:David Bowie album:",Title )) %>%
+  mutate(spot_data = map(spot_string, search_spotify, type = "album"))
+test %>%
+  unnest(spot_data) %>%
+  filter(album_type == "album") %>%
+  view()
+
 
