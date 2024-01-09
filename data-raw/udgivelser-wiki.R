@@ -1,6 +1,7 @@
 library(tidyverse)
 library(rvest)
 library(xml2)
+library(spotifyr)
 
 # grabser tabeller fra wikipedia.
 # der er behov for en del oprydning
@@ -38,14 +39,41 @@ live_contributions                     <- tabeller[[27]]
 guest_apperances                       <- tabeller[[28]]
 remixes_and_alternate_versions         <- tabeller[[29]]
 
-test <- primary_studio_albums %>% select(Title, details=`Album details`) %>%
+
+# Primære studie albums.
+
+# Isolerer år og titel mhp at trække data fra spotify
+# Manuel redigering af "Toy" som Spotify mener er fra 2022
+# Af "Pin Ups" som de kalder for "PinUps" og
+# "Let's Dance", der skal søges som "lets dance". Formentlig fordi
+# apostroffen giver bøvl.
+# Og så er der The Buddha of Suburbia, hvor Spotify ikke anerkender "the"
+
+test <- primary_studio_albums %>%
+  select(Title, details=`Album details`) %>%
   filter(str_detect(details, "Released")) %>%
   mutate(year = str_extract(details, "\\d{4}")) %>%
+  mutate(year = case_when(
+    Title == "Toy" ~ "2022",
+    .default = year)) %>%
+  mutate(Title = case_when(
+    Title == "Pin Ups" ~ "pinups",
+    Title == "Let's Dance" ~ "lets dance",
+    Title == "The Buddha of Suburbia" ~ "Buddha of Suburbia",
+    .default = Title)
+    )
+
+
+
+
+# Genererer Spotify søgestreng, og søger i Spotify
+test <- test %>%
   mutate(spot_string = str_c("year:",year, " artist:David Bowie album:",Title )) %>%
   mutate(spot_data = map(spot_string, search_spotify, type = "album"))
+
+
 test %>%
   unnest(spot_data) %>%
-  filter(album_type == "album") %>%
-  view()
-
-
+  filter(album_type %in% c("album", "compilation")) %>%
+  pull(Title)
+s
