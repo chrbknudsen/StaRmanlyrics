@@ -17,7 +17,7 @@ album_palettes <- lapply(list(
   lover        = c("#76BAE0", "#8C4F66", "#B8396B", "#EBBED3", "#FFF5CC"),    # fra taylor
   folklore     = c("#3E3E3E", "#545454", "#5C5C5C", "#949494", "#EBEBEB"),    # fra taylor
   evermore     = c("#160E10", "#421E18", "#D37F55", "#85796D", "#E0D9D7"),    # fra taylor
-  midnights    = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6")    # fra taylor
+  midnights    = c("#121D27", "#5A658B", "#6F86A2", "#85A7BA", "#AA9EB6")     # fra taylor
 ), color_palette)
 
 
@@ -27,5 +27,4 @@ album_palettes <- lapply(list(
 # "#939b9d"
 # "#614f49"
 # "#0082bf"
-
 
