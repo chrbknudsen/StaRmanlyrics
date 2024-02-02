@@ -23,8 +23,8 @@ affiliation:
   - num: 3
     address: Another Institute of a place where work gets done, Earth, Milky Way
 main_findings:
-  - "Make **better posters** with RMarkdown + **posterdown**."
-logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+  - "Søren og Christians vildt seje bowie pakke"
+logoleft_name: Datalab_colours_clear.png
 logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 logocenter_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
 output: 
@@ -59,6 +59,9 @@ knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
 1. Pick a template layout.
 2. Write/ create your poster content distraction free.
 3. Let posterdown do its thing!
+
+
+<!-- pagedown	pagedown::chrome_print("myfile.Rmd") -->
 
 # Methods
 
