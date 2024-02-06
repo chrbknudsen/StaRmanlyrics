@@ -25,7 +25,7 @@ affiliation:
 main_findings:
   - "Søren og Christians vildt seje bowie pakke"
 logoleft_name: Datalab_colours_clear.png
-logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logoright_name: https&#58;//raw.githubusercontent.com/KUBDatalab/StaRmanlyrics/main/man/figures/logo.png
 logocenter_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
 output: 
   posterdown::posterdown_betterport:
