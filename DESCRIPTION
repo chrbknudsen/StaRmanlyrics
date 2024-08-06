@@ -1,5 +1,5 @@
 Package: StaRmanlyrics
-Title: What the Package Does (One Line, Title Case)
+Title: Lyrics and Song Data for (parts of) David Bowie's work
 Version: 0.0.0.9000
 Authors@R: c(
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
