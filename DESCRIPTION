@@ -14,3 +14,5 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 URL: https://kubdatalab.github.io/StaRmanlyrics/
+Imports: 
+    staRmanlyrics
