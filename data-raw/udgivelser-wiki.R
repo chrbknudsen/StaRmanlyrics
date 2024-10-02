@@ -2,6 +2,17 @@ library(tidyverse)
 library(rvest)
 library(xml2)
 library(spotifyr)
+library(rgenius)
+library(tidytext)
+
+# Henter hemmeligheder til spotify
+# Denne fil er på gitignore. Ønsker du selv at lave
+# den, skal du lave en liste med client_id og client_secret,
+# og gemme den med saveRDS()
+# HUSK HUSK HUSK AT SÆTTE DEN PÅ GITIGNORE!!!!!
+# Ellers ender den på github. Det er bøvlet at fjerne den derfra igen.
+# Og så vil vi skulle oprette nye spotify hemmeligheder...
+hemmeligheder <- readRDS("hemmeligheder.Rds")
 
 # grabser tabeller fra wikipedia.
 # der er behov for en del oprydning
@@ -65,15 +76,66 @@ test <- primary_studio_albums %>%
 
 
 
-
+# search_spotify()
 # Genererer Spotify søgestreng, og søger i Spotify
 test <- test %>%
   mutate(spot_string = str_c("year:",year, " artist:David Bowie album:",Title )) %>%
-  mutate(spot_data = map(spot_string, search_spotify, type = "album"))
+  mutate(spot_data = map(spot_string, search_spotify, type = "album",
+                         authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
+                                                                  client_secret = hemmeligheder[["client_secret"]])))
+
+
+
+
+
 
 
 test %>%
   unnest(spot_data) %>%
   filter(album_type %in% c("album", "compilation")) %>%
-  pull(Title)
-s
+  view()
+
+# henter de individuelle sange fra et givet album med metadata og andet godt.
+res <- spotifyr::get_album_tracks("4h9rWFWhgCSSrvIEQ0YhYG",
+                           authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
+                                                                    client_secret = hemmeligheder[["client_secret"]]))
+TMWSTW <- res
+
+
+
+
+# bowies artist id hos genius 9534
+# her tjekker vi at vi har en api-token liggende. Den skal sættes som
+# system variabel. der er nok mere fikse måder.
+Sys.getenv('GENIUS_API_TOKEN')
+
+# er det her noget der fejler. Eller
+# er der bare overhovedet ikke tålmodighed nok i Christian
+# disk <- get_discography_lyrics('9534')
+# eller
+
+#oplysninger om bowie
+noget <- get_genius_artist('9534')
+get_discography_lyrics
+
+# kan vi få diskografien?
+# det kan vi. Man skal bare have 42% mere tålmodighed end
+# Christian har.
+diskografien <- get_genius_artist_songs('9534')
+diskografien %>% view()
+
+
+
+# Nu gør vi det selv!
+song_id <-'4193889'
+
+
+response <- GET(url = str_glue("https://api.genius.com/songs/{song_id}"),
+                query = list(access_token = Sys.getenv('GENIUS_API_TOKEN')), quiet = TRUE)
+response %>% content()
+
+# Kigger man nærmere på koden i rgenius kan man se at lyrics bliver trukket
+# ud ved at webscrape. Hvis genius har ændret på deres hjemmeside struktur
+# inden for de seneste to år (og det har de nok...), så må vi forvente at det
+# er derfor vi, når det går bedst, får "producer" ud som sangtekst.
+
