@@ -1,6 +1,7 @@
 library(tidyverse)
 library(rvest)
 library(xml2)
+library(httr)
 library(spotifyr)
 library(rgenius)
 library(tidytext)
@@ -100,7 +101,7 @@ res <- spotifyr::get_album_tracks("4h9rWFWhgCSSrvIEQ0YhYG",
                            authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
                                                                     client_secret = hemmeligheder[["client_secret"]]))
 TMWSTW <- res
-
+view(TMWSTW)
 
 
 
@@ -109,6 +110,9 @@ TMWSTW <- res
 # system variabel. der er nok mere fikse måder.
 Sys.getenv('GENIUS_API_TOKEN')
 
+
+
+Sys.setenv(GENIUS_API_TOKEN = "")
 # er det her noget der fejler. Eller
 # er der bare overhovedet ikke tålmodighed nok i Christian
 # disk <- get_discography_lyrics('9534')
@@ -122,6 +126,8 @@ get_discography_lyrics
 # det kan vi. Man skal bare have 42% mere tålmodighed end
 # Christian har.
 diskografien <- get_genius_artist_songs('9534')
+
+write_csv(diskografien, "data-raw/diskografien.csv")
 diskografien %>% view()
 
 
@@ -134,6 +140,16 @@ response <- GET(url = str_glue("https://api.genius.com/songs/{song_id}"),
                 query = list(access_token = Sys.getenv('GENIUS_API_TOKEN')), quiet = TRUE)
 response %>% content()
 
+# Det bør give os et resultat hvor vi har en url til siden med
+# sangteksten
+
+eget_kald <- response %>% content()
+
+# dette ser ud til at være den relative sti til lyrics hos genius.
+eget_kald$response$song$path
+
+eget_kald$response$song
+class(eget_kald$response$song$path)
 # Kigger man nærmere på koden i rgenius kan man se at lyrics bliver trukket
 # ud ved at webscrape. Hvis genius har ændret på deres hjemmeside struktur
 # inden for de seneste to år (og det har de nok...), så må vi forvente at det
