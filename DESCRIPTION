@@ -13,8 +13,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://kubdatalab.github.io/StaRmanlyrics/
 Imports: 
     staRmanlyrics
+Config/testthat/edition: 3

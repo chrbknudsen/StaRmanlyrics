@@ -155,3 +155,5 @@ class(eget_kald$response$song$path)
 # inden for de seneste to år (og det har de nok...), så må vi forvente at det
 # er derfor vi, når det går bedst, får "producer" ud som sangtekst.
 
+library(taylor)
+taylor::taylor_all_songs
