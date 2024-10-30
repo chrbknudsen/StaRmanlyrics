@@ -15,7 +15,7 @@ library(tidytext)
 # Og så vil vi skulle oprette nye spotify hemmeligheder...
 hemmeligheder <- readRDS("hemmeligheder.Rds")
 
-# grabser tabeller fra wikipedia.
+# grabser tabeller fra wikipedia. ----
 # der er behov for en del oprydning
 
 diskografi <- "https://en.wikipedia.org/wiki/David_Bowie_discography"
@@ -52,7 +52,7 @@ guest_apperances                       <- tabeller[[28]]
 remixes_and_alternate_versions         <- tabeller[[29]]
 
 
-# Primære studie albums.
+# Data primære studie albums. ----
 
 # Isolerer år og titel mhp at trække data fra spotify
 # Manuel redigering af "Toy" som Spotify mener er fra 2022
@@ -77,7 +77,8 @@ test <- primary_studio_albums %>%
 
 
 
-# search_spotify()
+# search_spotify() ----
+# test indeholder nu de data vi kan trække fra spotify (på studiealbum)
 # Genererer Spotify søgestreng, og søger i Spotify
 test <- test %>%
   mutate(spot_string = str_c("year:",year, " artist:David Bowie album:",Title )) %>%
@@ -90,46 +91,52 @@ test <- test %>%
 
 
 
-
 test %>%
   unnest(spot_data) %>%
-  filter(album_type %in% c("album", "compilation")) %>%
-  view()
+  filter(album_type %in% c("album", "compilation"))
 
-# henter de individuelle sange fra et givet album med metadata og andet godt.
+# henter de individuelle sange fra et givet album med metadata og andet godt. ----
+# album id kommer fra spot_data kolonnen i test. Den ligger i et felt der hedder id.
 res <- spotifyr::get_album_tracks("4h9rWFWhgCSSrvIEQ0YhYG",
                            authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
                                                                     client_secret = hemmeligheder[["client_secret"]]))
 TMWSTW <- res
-view(TMWSTW)
 
 
 
+# nu gør vi ting på genius. ----
 # bowies artist id hos genius 9534
 # her tjekker vi at vi har en api-token liggende. Den skal sættes som
 # system variabel. der er nok mere fikse måder.
-Sys.getenv('GENIUS_API_TOKEN')
+
+hemmeligheder <- readRDS("hemmeligheder.Rds")
+
+
+Sys.setenv(GENIUS_API_TOKEN = hemmeligheder$genius)
 
 
 
-Sys.setenv(GENIUS_API_TOKEN = "")
+disk <- get_discography_lyrics('9534')
+
 # er det her noget der fejler. Eller
 # er der bare overhovedet ikke tålmodighed nok i Christian
 # disk <- get_discography_lyrics('9534')
 # eller
 
 #oplysninger om bowie
-noget <- get_genius_artist('9534')
+# noget <- get_genius_artist('9534')
 get_discography_lyrics
 
 # kan vi få diskografien?
 # det kan vi. Man skal bare have 42% mere tålmodighed end
 # Christian har.
-diskografien <- get_genius_artist_songs('9534')
+# Man skal også undgå at blive ratelimited...
+diskografien <- get_genius_artist_songs(9534)
 
-write_csv(diskografien, "data-raw/diskografien.csv")
-diskografien %>% view()
-
+# write_csv(diskografien, "data-raw/diskografien.csv")
+read_csv("data-raw/diskografien.csv")
+# Og har vi så links til lyrics siderne. Som vi pt. ikke har adgang til, fordi
+# vi ikke er lige så høflige når vi høster som Søren W
 
 
 # Nu gør vi det selv!
@@ -147,6 +154,9 @@ eget_kald <- response %>% content()
 
 # dette ser ud til at være den relative sti til lyrics hos genius.
 eget_kald$response$song$path
+paste0("https://genius.com",eget_kald$response$song$path)
+
+
 
 eget_kald$response$song
 class(eget_kald$response$song$path)
@@ -155,5 +165,53 @@ class(eget_kald$response$song$path)
 # inden for de seneste to år (og det har de nok...), så må vi forvente at det
 # er derfor vi, når det går bedst, får "producer" ud som sangtekst.
 
+
+# vi vil gerne have samme struktur som i taylor pakken.
 library(taylor)
-taylor::taylor_all_songs
+taylor::taylor_all_songs %>%
+#  filter(str_detect(track_name, "Fearless")) %>%
+  pull(lyrics) %>%
+  bind_rows() %>% str()
+
+# så vi skal frem til at lyrics er en list-column, med en tibble pr. sang.
+# Og fire kolonner:
+#   line int
+# lyric chr
+# element chr
+# element_artist chr
+# vi kan notere at hos taylor pakken er der ingen andre element artister end taylor.
+
+
+# status ----
+
+
+# Vi kan få fat på alle urls til de bowie sange vi kan få hos genius. Vi skal måske
+# lige tale med Søren W om hvordan vi gør det uden at blive ratelimited...
+
+# vi har faktisk alle de urls liggende i diskografien.
+
+# Vi skal derefter have skrabet lyrics fra de urls, og gemt dem i en tibble med
+# ovenstående struktur
+
+# Det gør vi nok med fordel én gang, gemmer og arbejder videre...
+
+# hver af de tibbler skal så ind i en list column i en tibble med disse kolonner:
+
+# [1] "album_name"          "ep"                  "album_release"       "track_number"        "track_name"
+# [6] "artist"              "featuring"           "bonus_track"         "promotional_release" "single_release"
+# [11] "track_release"       "danceability"        "energy"              "key"                 "loudness"
+# [16] "mode"                "speechiness"         "acousticness"        "instrumentalness"    "liveness"
+# [21] "valence"             "tempo"               "time_signature"      "duration_ms"         "explicit"
+# [26] "key_name"            "mode_name"           "key_mode"            "lyrics"
+
+
+# har vi noget vi kan komme videre med? ----
+TMWSTW
+library(spotifyr)
+hm <- spotifyr::get_artist_audio_features(artist = "David Bowie", authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
+                                                                                                     client_secret = hemmeligheder[["client_secret"]]))
+# og det betyder faktisk at vi har størstedelen af data på bowie sangene nu.
+
+install.packages("spotifyr")
+view(hm)
+library(tidyverse)
