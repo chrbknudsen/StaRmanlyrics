@@ -20,7 +20,7 @@
 #'
 #' album_palettes$evermore
 album_palettes <- lapply(list(
-  david_bowie = c("#000", "#000", "#000", "#000", "#000"),
+  david_bowie = c("#2C3123", "#7AD2D9", "#EAD4AD", "#AF8D61", "#54623E"),
   the_man_who_sold_the_world = c("#000", "#000", "#000", "#000", "#000"),
   hunky_dory = c("#000", "#000", "#000", "#000", "#000"),
   the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c("#000", "#000", "#000", "#000", "#000"),
