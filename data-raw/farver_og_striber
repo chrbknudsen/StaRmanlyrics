@@ -1,0 +1,4 @@
+Hvor vi fandt billederne til farvepaletterne
+
+david_bowie:
+eyedroppeR::extract_pal(5, "https://matthasanopinion.com/wp-content/uploads/2021/09/david-bowie-debut.jpg")
