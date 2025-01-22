@@ -20,9 +20,32 @@
 #'
 #' album_palettes$evermore
 album_palettes <- lapply(list(
-
-
-  tortured_poets = c("#1C160F", "#3F3824", "#635B3A", "#ADA795", "#F7F4F0")
+  david_bowie = c("#000", "#000", "#000", "#000", "#000"),
+  the_man_who_sold_the_world = c("#000", "#000", "#000", "#000", "#000"),
+  hunky_dory = c("#000", "#000", "#000", "#000", "#000"),
+  the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c("#000", "#000", "#000", "#000", "#000"),
+  aladdin_sane = c("#000", "#000", "#000", "#000", "#000"),
+  pin_ups = c("#000", "#000", "#000", "#000", "#000"),
+  diamond_dogs = c("#000", "#000", "#000", "#000", "#000"),
+  young_americans = c("#000", "#000", "#000", "#000", "#000"),
+  station_to_station = c("#000", "#000", "#000", "#000", "#000"),
+  low = c("#000", "#000", "#000", "#000", "#000"),
+  heroes = c("#000", "#000", "#000", "#000", "#000"),
+  lodger = c("#000", "#000", "#000", "#000", "#000"),
+  scary_monsters_and_super_creeps = c("#000", "#000", "#000", "#000", "#000"),
+  lets_dance = c("#000", "#000", "#000", "#000", "#000"),
+  tonight = c("#000", "#000", "#000", "#000", "#000"),
+  never_let_me_down = c("#000", "#000", "#000", "#000", "#000"),
+  black_tie_white_noise = c("#000", "#000", "#000", "#000", "#000"),
+  the_buddha_of_suburbia = c("#000", "#000", "#000", "#000", "#000"),
+  outside = c("#000", "#000", "#000", "#000", "#000"),
+  earthling = c("#000", "#000", "#000", "#000", "#000"),
+  hours = c("#000", "#000", "#000", "#000", "#000"),
+  heathen = c("#000", "#000", "#000", "#000", "#000"),
+  reality = c("#000", "#000", "#000", "#000", "#000"),
+  the_next_day = c("#000", "#000", "#000", "#000", "#000"),
+  blackstar = c("#000", "#000", "#000", "#000", "#000"),
+  toy = c("#000", "#000", "#000", "#000", "#000")
 ), color_palette)
 
 #' @rdname album_palettes
@@ -77,14 +100,14 @@ album_compare <- color_palette(
 #'                                    levels = album_levels)
 #' ggplot(studio_albums, aes(x = metacritic_score, y = album_name)) +
 #'   geom_col()
-album_levels <- c("Taylor Swift",
-                  "Fearless", "Fearless (Taylor's Version)",
-                  "Speak Now", "Speak Now (Taylor's Version)",
-                  "Red", "Red (Taylor's Version)",
-                  "1989", "1989 (Taylor's Version)",
-                  "reputation",
-                  "Lover", "folklore", "evermore", "Midnights",
-                  "THE TORTURED POETS DEPARTMENT")
+album_levels <- c("David Bowie", "The Man Who Sold the World", "Hunky Dory",
+                  "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+                  "Aladdin Sane", "Pin Ups", "Diamond Dogs", "Young Americans",
+                  "Station to Station", "Low", "'Heroes'", "Lodger",
+                  "Scary Monsters (and Super Creeps)", "Let's Dance",
+                  "Tonight", "Never Let Me Down", "Black Tie White Noise",
+                  "The Buddha of Suburbia", "Outside", "Earthling", "Hours",
+                  "Heathen", "Reality", "The Next Day", "Blackstar", "Toy")
 
 
 # Scale functions --------------------------------------------------------------
