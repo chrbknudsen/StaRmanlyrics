@@ -24,7 +24,7 @@ album_palettes <- lapply(list(
   the_man_who_sold_the_world = c('#364B56', '#6C6467', '#918C8B', '#CCB4AC', '#478DAE'),
   hunky_dory = c('#433633', '#6F5A4B', '#BC9D85', '#EBC5BE', '#917C70'),
   the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c('#211C1B', '#B08553', '#E3D880', '#73634B', '#4A4039'),
-  aladdin_sane = c("#000", "#000", "#000", "#000", "#000"),
+  aladdin_sane = c('#452624', '#96403D', '#A1737A', '#E2D9DA', '#B6A0A4'),
   pin_ups = c("#000", "#000", "#000", "#000", "#000"),
   diamond_dogs = c("#000", "#000", "#000", "#000", "#000"),
   young_americans = c("#000", "#000", "#000", "#000", "#000"),
@@ -46,7 +46,7 @@ album_palettes <- lapply(list(
   the_next_day = c("#000", "#000", "#000", "#000", "#000"),
   blackstar = c("#000", "#000", "#000", "#000", "#000"),
   toy = c("#000", "#000", "#000", "#000", "#000")
-), color_palette)
+  ), color_palette)
 
 #' @rdname album_palettes
 #' @export
