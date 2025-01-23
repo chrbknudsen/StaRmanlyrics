@@ -21,9 +21,9 @@
 #' album_palettes$evermore
 album_palettes <- lapply(list(
   david_bowie = c("#2C3123", "#7AD2D9", "#EAD4AD", "#AF8D61", "#54623E"),
-  the_man_who_sold_the_world = c("#000", "#000", "#000", "#000", "#000"),
-  hunky_dory = c("#000", "#000", "#000", "#000", "#000"),
-  the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c("#000", "#000", "#000", "#000", "#000"),
+  the_man_who_sold_the_world = c('#364B56', '#6C6467', '#918C8B', '#CCB4AC', '#478DAE'),
+  hunky_dory = c('#433633', '#6F5A4B', '#BC9D85', '#EBC5BE', '#917C70'),
+  the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c('#211C1B', '#B08553', '#E3D880', '#73634B', '#4A4039'),
   aladdin_sane = c("#000", "#000", "#000", "#000", "#000"),
   pin_ups = c("#000", "#000", "#000", "#000", "#000"),
   diamond_dogs = c("#000", "#000", "#000", "#000", "#000"),

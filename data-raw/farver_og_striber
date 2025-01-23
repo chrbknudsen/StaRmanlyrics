@@ -1,4 +1,14 @@
 Hvor vi fandt billederne til farvepaletterne
+Der generes forskellig paletter, for hver gang man kører eyedropper::extract_pal()
 
 david_bowie:
 eyedroppeR::extract_pal(5, "https://matthasanopinion.com/wp-content/uploads/2021/09/david-bowie-debut.jpg")
+
+the_who_sold_the_world
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/2/23/TheManWhoSoldtheWorld.jpg")
+
+honky_dory
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/4/40/David_Bowie_-_Hunky_Dory.jpg")
+
+the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/0/01/ZiggyStardust.jpg")
