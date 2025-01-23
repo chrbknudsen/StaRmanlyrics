@@ -12,3 +12,7 @@ eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/4/40/David
 
 the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/0/01/ZiggyStardust.jpg")
+
+aladdin_sane
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/6/6e/DavisBowieAladdinSane.jpg")
+
