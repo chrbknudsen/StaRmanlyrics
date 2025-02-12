@@ -1,0 +1,147 @@
+---
+title: "planen"
+author: "Christian Knudsen"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Vi skal lave en pakke
+### ja vi skal.
+
+
+
+## taylor struktur
+
+```
++-- cran-comments.md
++-- data
+|   +-- eras_tour_surprise.rda
+|   +-- taylor_albums.rda
+|   +-- taylor_album_songs.rda
+|   \-- taylor_all_songs.rda
++-- data-raw
+|   +-- fix-chars.py
+|   +-- lyrics
+|   |   +-- 01a_taylor-swift-deluxe
+|   |   |   +-- 12_im-only-me-when-im-with-you.txt
+her følger der en mappe for hvert taylor-album, og en txt fil for hver sang.
+Det er ikke givet at det er den måde vi kommer til at gøre det på. Eller også
+er det netop den måde vi bør gøre det på (det kunne blive lettere at rette fejl)
+Under alle omstændigheder behøver vi ikke have det med i denne visning
+|   +-- palette-sorter.R
+|   +-- releases.xlsx
+|   +-- spotify-data.csv
+|   +-- surprise-songs.R
+|   +-- surprise-songs.xlsx
+|   +-- taylor-lyrics.R
+|   +-- tweet-thread.R
+|   \-- _archive
+|       \-- metacritic-scraping.R
++-- DESCRIPTION
++-- inst
+|   \-- WORDLIST
++-- LICENSE
++-- LICENSE.md
++-- man
+|   +-- album_levels.Rd
+|   +-- album_palettes.Rd
+|   +-- color_palette.Rd
+|   +-- eras_tour_surprise.Rd
+|   +-- figures
+|   |   +-- lifecycle-archived.svg
+|   |   +-- lifecycle-defunct.svg
+|   |   +-- lifecycle-deprecated.svg
+|   |   +-- lifecycle-experimental.svg
+|   |   +-- lifecycle-maturing.svg
+|   |   +-- lifecycle-questioning.svg
+|   |   +-- lifecycle-stable.svg
+|   |   +-- lifecycle-superseded.svg
+|   |   \-- logo.png
+|   +-- scale_albums.Rd
+|   +-- scale_taylor.Rd
+|   +-- taylor-package.Rd
+|   +-- taylor-vctrs.Rd
+|   +-- taylor_albums.Rd
+|   +-- taylor_songs.Rd
+|   +-- title_case.Rd
+|   \-- translate_bracelet.Rd
++-- NAMESPACE
++-- NEWS.md
++-- pkgdown
+|   +-- album-css
+|   |   +-- 1989-tv.css
+|   |   +-- evermore.css
+|   |   +-- fearless-tv.css
+|   |   +-- midnights.css
+|   |   +-- red-tv.css
+|   |   +-- speak-now-tv.css
+|   |   \-- ttpd.css
+|   +-- extra.css
+|   +-- favicon
+|   |   +-- apple-touch-icon.png
+|   |   +-- favicon-96x96.png
+|   |   +-- favicon.ico
+|   |   +-- favicon.svg
+|   |   +-- site.webmanifest
+|   |   +-- web-app-manifest-192x192.png
+|   |   \-- web-app-manifest-512x512.png
+|   \-- _pkgdown.yml
++-- R
+|   +-- data-checks.R
+|   +-- data.R
+|   +-- ggplot2-color-scales.R
+|   +-- lyric-abbreviation.R
+|   +-- misc.R
+|   +-- palette.R
+|   +-- taylor-album-palettes.R
+|   \-- taylor-package.R
++-- README.md
++-- README.Rmd
++-- revdep
+|   +-- cran.md
+|   +-- email.yml
+|   +-- failures.md
+|   +-- problems.md
+|   \-- README.md
++-- taylor.Rproj
++-- tests
+|   +-- spelling.R
+|   +-- testthat
+|   |   +-- test-data-checks.R
+|   |   +-- test-data.R
+|   |   +-- test-deprecation.R
+|   |   +-- test-ggplot2-color-scales.R
+|   |   +-- test-lyric-abbreviation.R
+|   |   +-- test-misc.R
+|   |   +-- test-palette.R
+|   |   +-- test-taylor-album-palettes.R
+|   |   \-- _snaps
+|   |       +-- data-checks.md
+|   |       +-- ggplot2-color-scales
+|   |       |   +-- 1989-color-b.svg
+|   |       |   +-- 1989-color-c.svg
+|   |       |   +-- 1989-color-d.svg
+|   |       |   +-- 1989-fill-b.svg
+|   |       |   +-- 1989-fill-c.svg
+|   |       |   +-- 1989-fill-d.svg
+Og her følger der tilsvarende sæt af svg'er for hvert album. Det behøver vi 
+heller ikke vise her.
+|   |       +-- misc.md
+|   |       +-- palette.md
+|   |       \-- taylor-album-palettes.md
+|   \-- testthat.R
+\-- vignettes
+    +-- children
+    |   \-- chunk-options.txt
+    +-- data
+    |   \-- example-uses.csv
+    +-- lyrics.Rmd
+    +-- palettes.Rmd
+    +-- plotting.Rmd
+    +-- taylor.Rmd
+    \-- _site.yml
+```

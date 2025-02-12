@@ -1,0 +1,607 @@
++-- cran-comments.md
++-- data
+|   +-- eras_tour_surprise.rda
+|   +-- taylor_albums.rda
+|   +-- taylor_album_songs.rda
+|   \-- taylor_all_songs.rda
++-- data-raw
+|   +-- fix-chars.py
+|   +-- lyrics
+|   |   +-- 01a_taylor-swift-deluxe
+|   |   |   +-- 12_im-only-me-when-im-with-you.txt
+|   |   |   +-- 13_invisible.txt
+|   |   |   +-- 14_a-perfectly-good-heart.txt
+|   |   |   \-- 15_teardrops-on-my-guitar-popv.txt
+|   |   +-- 01_taylor-swift
+|   |   |   +-- 01_tim-mcgraw.txt
+|   |   |   +-- 02_picture-to-burn.txt
+|   |   |   +-- 03_teardrops-on-my-guitar.txt
+|   |   |   +-- 04_a-place-in-this-world.txt
+|   |   |   +-- 05_cold-as-you.txt
+|   |   |   +-- 06_the-outside.txt
+|   |   |   +-- 07_tied-together-with-a-smile.txt
+|   |   |   +-- 08_stay-beautiful.txt
+|   |   |   +-- 09_shouldve-said-no.txt
+|   |   |   +-- 10_marys-song.txt
+|   |   |   \-- 11_our-song.txt
+|   |   +-- 02a_fearless-platinum-edition
+|   |   |   +-- 14_jump-then-fall.txt
+|   |   |   +-- 15_untouchable.txt
+|   |   |   +-- 16_forever-n-always-pianov.txt
+|   |   |   +-- 17_come-in-with-the-rain.txt
+|   |   |   +-- 18_superstar.txt
+|   |   |   \-- 19_the-other-side-of-the-door.txt
+|   |   +-- 02b_fearless-taylors-version
+|   |   |   +-- 01_fearless-tv.txt
+|   |   |   +-- 02_fifteen-tv.txt
+|   |   |   +-- 03_love-story-tv.txt
+|   |   |   +-- 04_hey-stephen-tv.txt
+|   |   |   +-- 05_white-horse-tv.txt
+|   |   |   +-- 06_you-belong-with-me-tv.txt
+|   |   |   +-- 07_breathe-tv.txt
+|   |   |   +-- 08_tell-me-why-tv.txt
+|   |   |   +-- 09_youre-not-sorry-tv.txt
+|   |   |   +-- 10_the-way-i-loved-you-tv.txt
+|   |   |   +-- 11_forever-n-always-tv.txt
+|   |   |   +-- 12_the-best-day-tv.txt
+|   |   |   +-- 13_change-tv.txt
+|   |   |   +-- 14_jump-then-fall-tv.txt
+|   |   |   +-- 15_untouchable-tv.txt
+|   |   |   +-- 16_forever-n-always-pianov-tv.txt
+|   |   |   +-- 17_come-in-with-the-rain-tv.txt
+|   |   |   +-- 18_superstar-tv.txt
+|   |   |   +-- 19_the-other-side-of-the-door-tv.txt
+|   |   |   +-- 20_today-was-a-fairytale-tv.txt
+|   |   |   +-- 21_you-all-over-me-tv-ftv.txt
+|   |   |   +-- 22_mr-perfectly-fine-tv-ftv.txt
+|   |   |   +-- 23_we-were-happy-tv-ftv.txt
+|   |   |   +-- 24_thats-when-tv-ftv.txt
+|   |   |   +-- 25_dont-you-tv-ftv.txt
+|   |   |   \-- 26_bye-bye-baby-tv-ftv.txt
+|   |   +-- 02_fearless
+|   |   |   +-- 01_fearless.txt
+|   |   |   +-- 02_fifteen.txt
+|   |   |   +-- 03_love-story.txt
+|   |   |   +-- 04_hey-stephen.txt
+|   |   |   +-- 05_white-horse.txt
+|   |   |   +-- 06_you-belong-with-me.txt
+|   |   |   +-- 07_breathe.txt
+|   |   |   +-- 08_tell-me-why.txt
+|   |   |   +-- 09_youre-not-sorry.txt
+|   |   |   +-- 10_the-way-i-loved-you.txt
+|   |   |   +-- 11_forever-n-always.txt
+|   |   |   +-- 12_the-best-day.txt
+|   |   |   \-- 13_change.txt
+|   |   +-- 03a_speak-now-deluxe
+|   |   |   +-- 15_ours.txt
+|   |   |   +-- 16_if-this-was-a-movie.txt
+|   |   |   \-- 17_superman.txt
+|   |   +-- 03b_speak-now-taylors-version
+|   |   |   +-- 01_mine-tv.txt
+|   |   |   +-- 02_sparks-fly-tv.txt
+|   |   |   +-- 03_back-to-december-tv.txt
+|   |   |   +-- 04_speak-now-tv.txt
+|   |   |   +-- 05_dear-john-tv.txt
+|   |   |   +-- 06_mean-tv.txt
+|   |   |   +-- 07_the-story-of-us-tv.txt
+|   |   |   +-- 08_never-grow-up-tv.txt
+|   |   |   +-- 09_enchanted-tv.txt
+|   |   |   +-- 10_better-than-revenge-tv.txt
+|   |   |   +-- 11_innocent-tv.txt
+|   |   |   +-- 12_haunted-tv.txt
+|   |   |   +-- 13_last-kiss-tv.txt
+|   |   |   +-- 14_long-live-tv.txt
+|   |   |   +-- 15_ours-tv.txt
+|   |   |   +-- 16_superman-tv.txt
+|   |   |   +-- 17_electric-touch-tv-ftv.txt
+|   |   |   +-- 18_when-emma-falls-in-love-tv-ftv.txt
+|   |   |   +-- 19_i-can-see-you-tv-ftv.txt
+|   |   |   +-- 20_castles-crumbling-tv-ftv.txt
+|   |   |   +-- 21_foolish-one-tv-ftv.txt
+|   |   |   \-- 22_timeless-tv-ftv.txt
+|   |   +-- 03_speak-now
+|   |   |   +-- 01_mine.txt
+|   |   |   +-- 02_sparks-fly.txt
+|   |   |   +-- 03_back-to-december.txt
+|   |   |   +-- 04_speak-now.txt
+|   |   |   +-- 05_dear-john.txt
+|   |   |   +-- 06_mean.txt
+|   |   |   +-- 07_the-story-of-us.txt
+|   |   |   +-- 08_never-grow-up.txt
+|   |   |   +-- 09_enchanted.txt
+|   |   |   +-- 10_better-than-revenge.txt
+|   |   |   +-- 11_innocent.txt
+|   |   |   +-- 12_haunted.txt
+|   |   |   +-- 13_last-kiss.txt
+|   |   |   \-- 14_long-live.txt
+|   |   +-- 04a_red-deluxe-edition
+|   |   |   +-- 17_the-moment-i-knew.txt
+|   |   |   +-- 18_come-back-be-here.txt
+|   |   |   +-- 19_girl-at-home.txt
+|   |   |   +-- 20_treacherous-odr.txt
+|   |   |   +-- 21_red-odr.txt
+|   |   |   \-- 22_state-of-grace-acousticv.txt
+|   |   +-- 04b_red-taylors-version
+|   |   |   +-- 01_state-of-grace-tv.txt
+|   |   |   +-- 02_red-tv.txt
+|   |   |   +-- 03_treacherous-tv.txt
+|   |   |   +-- 04_i-knew-you-were-trouble-tv.txt
+|   |   |   +-- 05_all-too-well-tv.txt
+|   |   |   +-- 06_22-tv.txt
+|   |   |   +-- 07_i-almost-do-tv.txt
+|   |   |   +-- 08_we-are-never-ever-getting-back-together-tv.txt
+|   |   |   +-- 09_stay-stay-stay-tv.txt
+|   |   |   +-- 10_the-last-time-tv.txt
+|   |   |   +-- 11_holy-ground-tv.txt
+|   |   |   +-- 12_sad-beautiful-tragic-tv.txt
+|   |   |   +-- 13_the-lucky-one-tv.txt
+|   |   |   +-- 14_everything-has-changed-tv.txt
+|   |   |   +-- 15_starlight-tv.txt
+|   |   |   +-- 16_begin-again-tv.txt
+|   |   |   +-- 17_the-moment-i-knew-tv.txt
+|   |   |   +-- 18_come-back-be-here-tv.txt
+|   |   |   +-- 19_girl-at-home-tv.txt
+|   |   |   +-- 20_state-of-grace-acousticv-tv.txt
+|   |   |   +-- 21_ronan-tv.txt
+|   |   |   +-- 22_better-man-tv-ftv.txt
+|   |   |   +-- 23_nothing-new-tv-ftv.txt
+|   |   |   +-- 24_babe-tv-ftv.txt
+|   |   |   +-- 25_message-in-a-bottle-tv-ftv.txt
+|   |   |   +-- 26_i-bet-you-think-about-me-tv-ftv.txt
+|   |   |   +-- 27_forever-winter-tv-ftv.txt
+|   |   |   +-- 28_run-tv-ftv.txt
+|   |   |   +-- 29_the-very-first-night-tv-ftv.txt
+|   |   |   \-- 30_all-too-well-10mv-tv-ftv.txt
+|   |   +-- 04_red
+|   |   |   +-- 01_state-of-grace.txt
+|   |   |   +-- 02_red.txt
+|   |   |   +-- 03_treacherous.txt
+|   |   |   +-- 04_i-knew-you-were-trouble.txt
+|   |   |   +-- 05_all-too-well.txt
+|   |   |   +-- 06_22.txt
+|   |   |   +-- 07_i-almost-do.txt
+|   |   |   +-- 08_we-are-never-ever-getting-back-together.txt
+|   |   |   +-- 09_stay-stay-stay.txt
+|   |   |   +-- 10_the-last-time.txt
+|   |   |   +-- 11_holy-ground.txt
+|   |   |   +-- 12_sad-beautiful-tragic.txt
+|   |   |   +-- 13_the-lucky-one.txt
+|   |   |   +-- 14_everything-has-changed.txt
+|   |   |   +-- 15_starlight.txt
+|   |   |   \-- 16_begin-again.txt
+|   |   +-- 05a_1989-deluxe
+|   |   |   +-- 14_wonderland.txt
+|   |   |   +-- 15_you-are-in-love.txt
+|   |   |   \-- 16_new-romantics.txt
+|   |   +-- 05b_1989-taylors-version
+|   |   |   +-- 01_welcome-to-new-york-tv.txt
+|   |   |   +-- 02_blank-space-tv.txt
+|   |   |   +-- 03_style-tv.txt
+|   |   |   +-- 04_out-of-the-woods-tv.txt
+|   |   |   +-- 05_all-you-had-to-do-was-stay-tv.txt
+|   |   |   +-- 06_shake-it-off-tv.txt
+|   |   |   +-- 07_i-wish-you-would-tv.txt
+|   |   |   +-- 08_bad-blood-tv.txt
+|   |   |   +-- 09_wildest-dreams-tv.txt
+|   |   |   +-- 10_how-you-get-the-girl-tv.txt
+|   |   |   +-- 11_this-love-tv.txt
+|   |   |   +-- 12_i-know-places-tv.txt
+|   |   |   +-- 13_clean-tv.txt
+|   |   |   +-- 14_wonderland-tv.txt
+|   |   |   +-- 15_you-are-in-love-tv.txt
+|   |   |   +-- 16_new-romantics-tv.txt
+|   |   |   +-- 17_slut-tv-ftv.txt
+|   |   |   +-- 18_say-dont-go-tv-ftv.txt
+|   |   |   +-- 19_now-that-we-dont-talk-tv-ftv.txt
+|   |   |   +-- 20_suburban-legends-tv-ftv.txt
+|   |   |   \-- 21_is-it-over-now-tv-ftv.txt
+|   |   +-- 05c_1989-taylors-version-deluxe
+|   |   |   \-- 22_bad-blood-rmx-tv.txt
+|   |   +-- 05d_1989-taylors-version-tangerine-edition
+|   |   |   \-- 22_sweeter-than-fiction-tv.txt
+|   |   +-- 05_1989
+|   |   |   +-- 01_welcome-to-new-york.txt
+|   |   |   +-- 02_blank-space.txt
+|   |   |   +-- 03_style.txt
+|   |   |   +-- 04_out-of-the-woods.txt
+|   |   |   +-- 05_all-you-had-to-do-was-stay.txt
+|   |   |   +-- 06_shake-it-off.txt
+|   |   |   +-- 07_i-wish-you-would.txt
+|   |   |   +-- 08_bad-blood.txt
+|   |   |   +-- 09_wildest-dreams.txt
+|   |   |   +-- 10_how-you-get-the-girl.txt
+|   |   |   +-- 11_this-love.txt
+|   |   |   +-- 12_i-know-places.txt
+|   |   |   \-- 13_clean.txt
+|   |   +-- 06_reputation
+|   |   |   +-- 01_ready-for-it.txt
+|   |   |   +-- 02_end-game.txt
+|   |   |   +-- 03_i-did-something-bad.txt
+|   |   |   +-- 04_dont-blame-me.txt
+|   |   |   +-- 05_delicate.txt
+|   |   |   +-- 06_look-what-you-made-me-do.txt
+|   |   |   +-- 07_so-it-goes.txt
+|   |   |   +-- 08_gorgeous.txt
+|   |   |   +-- 09_getaway-car.txt
+|   |   |   +-- 10_king-of-my-heart.txt
+|   |   |   +-- 11_dancing-with-our-hands-tied.txt
+|   |   |   +-- 12_dress.txt
+|   |   |   +-- 13_this-is-why-we-cant-have-nice-things.txt
+|   |   |   +-- 14_call-it-what-you-want.txt
+|   |   |   \-- 15_new-years-day.txt
+|   |   +-- 07_lover
+|   |   |   +-- 01_i-forgot-that-you-existed.txt
+|   |   |   +-- 02_cruel-summer.txt
+|   |   |   +-- 03_lover.txt
+|   |   |   +-- 04_the-man.txt
+|   |   |   +-- 05_the-archer.txt
+|   |   |   +-- 06_i-think-he-knows.txt
+|   |   |   +-- 07_miss-americana-n-the-heartbreak-prince.txt
+|   |   |   +-- 08_paper-rings.txt
+|   |   |   +-- 09_cornelia-street.txt
+|   |   |   +-- 10_death-by-a-thousand-cuts.txt
+|   |   |   +-- 11_london-boy.txt
+|   |   |   +-- 12_soon-youll-get-better.txt
+|   |   |   +-- 13_false-god.txt
+|   |   |   +-- 14_you-need-to-calm-down.txt
+|   |   |   +-- 15_afterglow.txt
+|   |   |   +-- 16_me.txt
+|   |   |   +-- 17_its-nice-to-have-a-friend.txt
+|   |   |   \-- 18_daylight.txt
+|   |   +-- 08a_folklore-deluxe-edition
+|   |   |   \-- 17_the-lakes.txt
+|   |   +-- 08_folklore
+|   |   |   +-- 01_the-1.txt
+|   |   |   +-- 02_cardigan.txt
+|   |   |   +-- 03_the-last-great-american-dynasty.txt
+|   |   |   +-- 04_exile.txt
+|   |   |   +-- 05_my-tears-ricochet.txt
+|   |   |   +-- 06_mirrorball.txt
+|   |   |   +-- 07_seven.txt
+|   |   |   +-- 08_august.txt
+|   |   |   +-- 09_this-is-me-trying.txt
+|   |   |   +-- 10_illicit-affairs.txt
+|   |   |   +-- 11_invisible-string.txt
+|   |   |   +-- 12_mad-woman.txt
+|   |   |   +-- 13_epiphany.txt
+|   |   |   +-- 14_betty.txt
+|   |   |   +-- 15_peace.txt
+|   |   |   \-- 16_hoax.txt
+|   |   +-- 09a_evermore-deluxe-edition
+|   |   |   +-- 16_right-where-you-left-me.txt
+|   |   |   \-- 17_its-time-to-go.txt
+|   |   +-- 09_evermore
+|   |   |   +-- 01_willow.txt
+|   |   |   +-- 02_champagne-problems.txt
+|   |   |   +-- 03_gold-rush.txt
+|   |   |   +-- 04_tis-the-damn-season.txt
+|   |   |   +-- 05_tolerate-it.txt
+|   |   |   +-- 06_no-body-no-crime.txt
+|   |   |   +-- 07_happiness.txt
+|   |   |   +-- 08_dorothea.txt
+|   |   |   +-- 09_coney-island.txt
+|   |   |   +-- 10_ivy.txt
+|   |   |   +-- 11_cowboy-like-me.txt
+|   |   |   +-- 12_long-story-short.txt
+|   |   |   +-- 13_marjorie.txt
+|   |   |   +-- 14_closure.txt
+|   |   |   \-- 15_evermore.txt
+|   |   +-- 10a_midnights-3am-edition
+|   |   |   +-- 14_the-great-war.txt
+|   |   |   +-- 15_bigger-than-the-whole-sky.txt
+|   |   |   +-- 16_paris.txt
+|   |   |   +-- 17_high-infidelity.txt
+|   |   |   +-- 18_glitch.txt
+|   |   |   +-- 19_wouldve-couldve-shouldve.txt
+|   |   |   \-- 20_dear-reader.txt
+|   |   +-- 10b_midnights-target-exclusive
+|   |   |   +-- 14_hits-different.txt
+|   |   |   +-- 15_youre-on-your-own-kid-stringrmx.txt
+|   |   |   \-- 16_sweet-nothing-pianormx.txt
+|   |   +-- 10c_midnights-til-dawn-edition
+|   |   |   +-- 22_snow-on-the-beach-mldr.txt
+|   |   |   \-- 23_karma-rmx.txt
+|   |   +-- 10d_midnights-late-night-edition
+|   |   |   \-- 19_youre-losing-me-ftv.txt
+|   |   +-- 10_midnights
+|   |   |   +-- 01_lavender-haze.txt
+|   |   |   +-- 02_maroon.txt
+|   |   |   +-- 03_anti-hero.txt
+|   |   |   +-- 04_snow-on-the-beach.txt
+|   |   |   +-- 05_youre-on-your-own-kid.txt
+|   |   |   +-- 06_midnight-rain.txt
+|   |   |   +-- 07_question.txt
+|   |   |   +-- 08_vigilante-shit.txt
+|   |   |   +-- 09_bejeweled.txt
+|   |   |   +-- 10_labyrinth.txt
+|   |   |   +-- 11_karma.txt
+|   |   |   +-- 12_sweet-nothing.txt
+|   |   |   \-- 13_mastermind.txt
+|   |   +-- 11a_the-tortured-poets-department-the-anthology
+|   |   |   +-- 17_the-black-dog.txt
+|   |   |   +-- 18_imgonnagetyouback.txt
+|   |   |   +-- 19_the-albatross.txt
+|   |   |   +-- 20_chloe-or-sam-or-sophia-or-marcus.txt
+|   |   |   +-- 21_how-did-it-end.txt
+|   |   |   +-- 22_so-high-school.txt
+|   |   |   +-- 23_i-hate-it-here.txt
+|   |   |   +-- 24_thank-you-aimee.txt
+|   |   |   +-- 25_i-look-in-peoples-windows.txt
+|   |   |   +-- 26_the-prophecy.txt
+|   |   |   +-- 27_cassandra.txt
+|   |   |   +-- 28_peter.txt
+|   |   |   +-- 29_the-bolter.txt
+|   |   |   +-- 30_robin.txt
+|   |   |   \-- 31_the-manuscript.txt
+|   |   +-- 11_the-tortured-poets-department
+|   |   |   +-- 01_fortnight.txt
+|   |   |   +-- 02_the-tortured-poets-department.txt
+|   |   |   +-- 03_my-boy-only-breaks-his-favorite-toys.txt
+|   |   |   +-- 04_down-bad.txt
+|   |   |   +-- 05_so-long-london.txt
+|   |   |   +-- 06_but-daddy-i-love-him.txt
+|   |   |   +-- 07_fresh-out-the-slammer.txt
+|   |   |   +-- 08_florida.txt
+|   |   |   +-- 09_guilty-as-sin.txt
+|   |   |   +-- 10_whos-afraid-of-little-old-me.txt
+|   |   |   +-- 11_i-can-fix-him-no-really-i-can.txt
+|   |   |   +-- 12_loml.txt
+|   |   |   +-- 13_i-can-do-it-with-a-broken-heart.txt
+|   |   |   +-- 14_the-smallest-man-who-ever-lived.txt
+|   |   |   +-- 15_the-alchemy.txt
+|   |   |   \-- 16_clara-bow.txt
+|   |   +-- 90_the-taylor-swift-holiday-collection
+|   |   |   +-- 01_last-christmas.txt
+|   |   |   +-- 02_christmases-when-you-were-mine.txt
+|   |   |   +-- 03_santa-baby.txt
+|   |   |   +-- 04_silent-night.txt
+|   |   |   +-- 05_christmas-must-be-something-more.txt
+|   |   |   \-- 06_white-christmas.txt
+|   |   +-- 91_beautiful-eyes
+|   |   |   +-- 01_beautiful-eyes.txt
+|   |   |   +-- 02_shouldve-said-no-altv.txt
+|   |   |   +-- 03_teardrops-on-my-guitar-acousticv.txt
+|   |   |   +-- 04_picture-to-burn-radioe.txt
+|   |   |   +-- 05_im-only-me-when-im-with-you.txt
+|   |   |   \-- 06_i-heart.txt
+|   |   +-- 97_non-album
+|   |   |   +-- all-of-the-girls-you-loved-before.txt
+|   |   |   +-- american-girl.txt
+|   |   |   +-- bad-blood-rmx.txt
+|   |   |   +-- beautiful-ghosts.txt
+|   |   |   +-- carolina.txt
+|   |   |   +-- christmas-tree-farm.txt
+|   |   |   +-- crazier.txt
+|   |   |   +-- eyes-open-tv.txt
+|   |   |   +-- eyes-open.txt
+|   |   |   +-- i-dont-wanna-live-forever.txt
+|   |   |   +-- if-this-was-a-movie-tv.txt
+|   |   |   +-- lover-rmx.txt
+|   |   |   +-- only-the-young.txt
+|   |   |   +-- ronan.txt
+|   |   |   +-- safe-n-sound-tv.txt
+|   |   |   +-- safe-n-sound.txt
+|   |   |   +-- september.txt
+|   |   |   +-- sweeter-than-fiction.txt
+|   |   |   \-- today-was-a-fairytale.txt
+|   |   +-- 98_features
+|   |   |   +-- babe.txt
+|   |   |   +-- birch.txt
+|   |   |   +-- both-of-us.txt
+|   |   |   +-- gasoline-rmx.txt
+|   |   |   +-- half-of-my-heart.txt
+|   |   |   +-- highway-dont-care.txt
+|   |   |   +-- renegade.txt
+|   |   |   +-- the-alcott.txt
+|   |   |   +-- the-joker-and-the-queen.txt
+|   |   |   +-- three-sad-virgins.txt
+|   |   |   +-- two-is-better-than-one.txt
+|   |   |   \-- us.txt
+|   |   \-- 99_writer
+|   |       +-- 1-step-forward-3-steps-back.txt
+|   |       +-- best-days-of-your-life.txt
+|   |       +-- better-man.txt
+|   |       +-- deja-vu.txt
+|   |       +-- this-is-what-you-came-for.txt
+|   |       +-- tmz.txt
+|   |       \-- youll-always-find-your-way-back-home.txt
+|   +-- palette-sorter.R
+|   +-- releases.xlsx
+|   +-- spotify-data.csv
+|   +-- surprise-songs.R
+|   +-- surprise-songs.xlsx
+|   +-- taylor-lyrics.R
+|   +-- tweet-thread.R
+|   \-- _archive
+|       \-- metacritic-scraping.R
++-- DESCRIPTION
++-- inst
+|   \-- WORDLIST
++-- LICENSE
++-- LICENSE.md
++-- man
+|   +-- album_levels.Rd
+|   +-- album_palettes.Rd
+|   +-- color_palette.Rd
+|   +-- eras_tour_surprise.Rd
+|   +-- figures
+|   |   +-- lifecycle-archived.svg
+|   |   +-- lifecycle-defunct.svg
+|   |   +-- lifecycle-deprecated.svg
+|   |   +-- lifecycle-experimental.svg
+|   |   +-- lifecycle-maturing.svg
+|   |   +-- lifecycle-questioning.svg
+|   |   +-- lifecycle-stable.svg
+|   |   +-- lifecycle-superseded.svg
+|   |   \-- logo.png
+|   +-- scale_albums.Rd
+|   +-- scale_taylor.Rd
+|   +-- taylor-package.Rd
+|   +-- taylor-vctrs.Rd
+|   +-- taylor_albums.Rd
+|   +-- taylor_songs.Rd
+|   +-- title_case.Rd
+|   \-- translate_bracelet.Rd
++-- NAMESPACE
++-- NEWS.md
++-- pkgdown
+|   +-- album-css
+|   |   +-- 1989-tv.css
+|   |   +-- evermore.css
+|   |   +-- fearless-tv.css
+|   |   +-- midnights.css
+|   |   +-- red-tv.css
+|   |   +-- speak-now-tv.css
+|   |   \-- ttpd.css
+|   +-- extra.css
+|   +-- favicon
+|   |   +-- apple-touch-icon.png
+|   |   +-- favicon-96x96.png
+|   |   +-- favicon.ico
+|   |   +-- favicon.svg
+|   |   +-- site.webmanifest
+|   |   +-- web-app-manifest-192x192.png
+|   |   \-- web-app-manifest-512x512.png
+|   \-- _pkgdown.yml
++-- R
+|   +-- data-checks.R
+|   +-- data.R
+|   +-- ggplot2-color-scales.R
+|   +-- lyric-abbreviation.R
+|   +-- misc.R
+|   +-- palette.R
+|   +-- taylor-album-palettes.R
+|   \-- taylor-package.R
++-- README.md
++-- README.Rmd
++-- revdep
+|   +-- cran.md
+|   +-- email.yml
+|   +-- failures.md
+|   +-- problems.md
+|   \-- README.md
++-- taylor.Rproj
++-- tests
+|   +-- spelling.R
+|   +-- testthat
+|   |   +-- test-data-checks.R
+|   |   +-- test-data.R
+|   |   +-- test-deprecation.R
+|   |   +-- test-ggplot2-color-scales.R
+|   |   +-- test-lyric-abbreviation.R
+|   |   +-- test-misc.R
+|   |   +-- test-palette.R
+|   |   +-- test-taylor-album-palettes.R
+|   |   \-- _snaps
+|   |       +-- data-checks.md
+|   |       +-- ggplot2-color-scales
+|   |       |   +-- 1989-color-b.svg
+|   |       |   +-- 1989-color-c.svg
+|   |       |   +-- 1989-color-d.svg
+|   |       |   +-- 1989-fill-b.svg
+|   |       |   +-- 1989-fill-c.svg
+|   |       |   +-- 1989-fill-d.svg
+|   |       |   +-- 1989-tv-color-b.svg
+|   |       |   +-- 1989-tv-color-c.svg
+|   |       |   +-- 1989-tv-color-d.svg
+|   |       |   +-- 1989-tv-fill-b.svg
+|   |       |   +-- 1989-tv-fill-c.svg
+|   |       |   +-- 1989-tv-fill-d.svg
+|   |       |   +-- albums-blank-bad-label.svg
+|   |       |   +-- albums-correct-factor.svg
+|   |       |   +-- albums-no-factor.svg
+|   |       |   +-- albums-random-factor.svg
+|   |       |   +-- albums-reverse-factor.svg
+|   |       |   +-- albums-specified-bad-label.svg
+|   |       |   +-- evermore-color-b.svg
+|   |       |   +-- evermore-color-c.svg
+|   |       |   +-- evermore-color-d.svg
+|   |       |   +-- evermore-fill-b.svg
+|   |       |   +-- evermore-fill-c.svg
+|   |       |   +-- evermore-fill-d.svg
+|   |       |   +-- fearless-color-b.svg
+|   |       |   +-- fearless-color-c.svg
+|   |       |   +-- fearless-color-d.svg
+|   |       |   +-- fearless-fill-b.svg
+|   |       |   +-- fearless-fill-c.svg
+|   |       |   +-- fearless-fill-d.svg
+|   |       |   +-- fearless-tv-color-b.svg
+|   |       |   +-- fearless-tv-color-c.svg
+|   |       |   +-- fearless-tv-color-d.svg
+|   |       |   +-- fearless-tv-fill-b.svg
+|   |       |   +-- fearless-tv-fill-c.svg
+|   |       |   +-- fearless-tv-fill-d.svg
+|   |       |   +-- folklore-color-b.svg
+|   |       |   +-- folklore-color-c.svg
+|   |       |   +-- folklore-color-d.svg
+|   |       |   +-- folklore-fill-b.svg
+|   |       |   +-- folklore-fill-c.svg
+|   |       |   +-- folklore-fill-d.svg
+|   |       |   +-- lover-color-b.svg
+|   |       |   +-- lover-color-c.svg
+|   |       |   +-- lover-color-d.svg
+|   |       |   +-- lover-fill-b.svg
+|   |       |   +-- lover-fill-c.svg
+|   |       |   +-- lover-fill-d.svg
+|   |       |   +-- midnights-color-b.svg
+|   |       |   +-- midnights-color-c.svg
+|   |       |   +-- midnights-color-d.svg
+|   |       |   +-- midnights-fill-b.svg
+|   |       |   +-- midnights-fill-c.svg
+|   |       |   +-- midnights-fill-d.svg
+|   |       |   +-- red-color-b.svg
+|   |       |   +-- red-color-c.svg
+|   |       |   +-- red-color-d.svg
+|   |       |   +-- red-fill-b.svg
+|   |       |   +-- red-fill-c.svg
+|   |       |   +-- red-fill-d.svg
+|   |       |   +-- red-tv-color-b.svg
+|   |       |   +-- red-tv-color-c.svg
+|   |       |   +-- red-tv-color-d.svg
+|   |       |   +-- red-tv-fill-b.svg
+|   |       |   +-- red-tv-fill-c.svg
+|   |       |   +-- red-tv-fill-d.svg
+|   |       |   +-- reputation-color-b.svg
+|   |       |   +-- reputation-color-c.svg
+|   |       |   +-- reputation-color-d.svg
+|   |       |   +-- reputation-fill-b.svg
+|   |       |   +-- reputation-fill-c.svg
+|   |       |   +-- reputation-fill-d.svg
+|   |       |   +-- speak-now-color-b.svg
+|   |       |   +-- speak-now-color-c.svg
+|   |       |   +-- speak-now-color-d.svg
+|   |       |   +-- speak-now-fill-b.svg
+|   |       |   +-- speak-now-fill-c.svg
+|   |       |   +-- speak-now-fill-d.svg
+|   |       |   +-- speak-now-tv-color-b.svg
+|   |       |   +-- speak-now-tv-color-c.svg
+|   |       |   +-- speak-now-tv-color-d.svg
+|   |       |   +-- speak-now-tv-fill-b.svg
+|   |       |   +-- speak-now-tv-fill-c.svg
+|   |       |   +-- speak-now-tv-fill-d.svg
+|   |       |   +-- taylor-swift-color-b.svg
+|   |       |   +-- taylor-swift-color-c.svg
+|   |       |   +-- taylor-swift-color-d.svg
+|   |       |   +-- taylor-swift-fill-b.svg
+|   |       |   +-- taylor-swift-fill-c.svg
+|   |       |   +-- taylor-swift-fill-d.svg
+|   |       |   +-- ttpd-color-b.svg
+|   |       |   +-- ttpd-color-c.svg
+|   |       |   +-- ttpd-color-d.svg
+|   |       |   +-- ttpd-fill-b.svg
+|   |       |   +-- ttpd-fill-c.svg
+|   |       |   \-- ttpd-fill-d.svg
+|   |       +-- misc.md
+|   |       +-- palette.md
+|   |       \-- taylor-album-palettes.md
+|   \-- testthat.R
+\-- vignettes
++-- children
+|   \-- chunk-options.txt
++-- data
+|   \-- example-uses.csv
++-- lyrics.Rmd
++-- palettes.Rmd
++-- plotting.Rmd
++-- taylor.Rmd
+\-- _site.yml
