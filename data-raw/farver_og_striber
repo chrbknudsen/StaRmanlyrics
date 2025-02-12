@@ -27,3 +27,8 @@ eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/1/1f/Diamo
 
 young_americans
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/b5/Young_americans.jpg")
+
+station_to_station
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/9/97/Station_to_Station_cover.jpg")
+
+
