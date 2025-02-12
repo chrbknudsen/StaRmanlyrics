@@ -4,6 +4,9 @@ Der generes forskellig paletter, for hver gang man kører eyedropper::extract_pa
 david_bowie:
 eyedroppeR::extract_pal(5, "https://matthasanopinion.com/wp-content/uploads/2021/09/david-bowie-debut.jpg")
 
+david_bowie_space_oddity
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/b9/DavidBowiePhilips.jpg")
+
 the_who_sold_the_world
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/2/23/TheManWhoSoldtheWorld.jpg")
 
@@ -16,3 +19,11 @@ eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/0/01/Ziggy
 aladdin_sane
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/6/6e/DavisBowieAladdinSane.jpg")
 
+pin_ups
+eyedroppeR::extract_pal(5, "https://en.wikipedia.org/wiki/Pin_Ups#/media/File:Pinups_(David_Bowie_album_-_cover_art).jpg)
+
+diamond_dogs
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/1/1f/Diamond_dogs.jpg")
+
+young_americans
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/b5/Young_americans.jpg")

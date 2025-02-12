@@ -20,14 +20,15 @@
 #'
 #' album_palettes$evermore
 album_palettes <- lapply(list(
-  david_bowie = c("#2C3123", "#7AD2D9", "#EAD4AD", "#AF8D61", "#54623E"),
+  david_bowie = c('#2C3123', '#7AD2D9', '#EAD4AD', '#AF8D61', '#54623E'),
+  david_bowie_space_oddity = c('#545D41', '#94A57D', '#3CAA8D', '#0F98AE', '#186F73'),
   the_man_who_sold_the_world = c('#364B56', '#6C6467', '#918C8B', '#CCB4AC', '#478DAE'),
   hunky_dory = c('#433633', '#6F5A4B', '#BC9D85', '#EBC5BE', '#917C70'),
   the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars = c('#211C1B', '#B08553', '#E3D880', '#73634B', '#4A4039'),
   aladdin_sane = c('#452624', '#96403D', '#A1737A', '#E2D9DA', '#B6A0A4'),
-  pin_ups = c("#000", "#000", "#000", "#000", "#000"),
-  diamond_dogs = c("#000", "#000", "#000", "#000", "#000"),
-  young_americans = c("#000", "#000", "#000", "#000", "#000"),
+  pin_ups = c('#4D210B', '#9F562D', '#C68F61', '#DFBAAD', '#7FA0C1'),
+  diamond_dogs = c('#4B352E', '#8C5439', '#C9A052', '#D2C9B4', '#868582'),
+  young_americans = c('#362927', '#A6979A', '#E9BEAF', '#E08462', '#88524C'),
   station_to_station = c("#000", "#000", "#000", "#000", "#000"),
   low = c("#000", "#000", "#000", "#000", "#000"),
   heroes = c("#000", "#000", "#000", "#000", "#000"),
