@@ -31,4 +31,38 @@ eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/b5/Young
 station_to_station
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/9/97/Station_to_Station_cover.jpg")
 
+low
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/9/93/Low_%28album%29.jpg")
+
+heroes
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/7/7b/David_Bowie_-_Heroes.png")
+
+lodger
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/1/12/Bowie-lodger.jpg")
+
+scary_monsters_and_super_creeps
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/0/0e/DavidBowieScaryMonstersCover.jpg")
+
+lets_dance
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/8/8d/David-bowie-lets-dance.jpg")
+
+tonight
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/d/d7/Tonight_%28album%29.jpg")
+
+never_let_me_down
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/1/12/Never-Let-Me-Down.jpg")
+
+black_tie_white_noise
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/7/7c/Blacktiewhitenoise.jpg")
+
+the_buddha_of_suburbia
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/1/1a/David_bowie-the_buddha_of_suburbia-uk.jpg")
+
+outside
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/4/44/Outsidebowie.jpg")
+
+earthling
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/bf/Earthling_%28album%29.jpg")
+
+
 
