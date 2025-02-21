@@ -39,14 +39,13 @@ album_palettes <- lapply(list(david_bowie = c('#2C3123', '#7AD2D9', '#EAD4AD', '
   black_tie_white_noise = c('#1C172E', '#9A170E', '#D5B7A3', '#99817B', '#584F59'),
   the_buddha_of_suburbia = c('#2B2C1D', '#697572', '#99A2A8', '#CBD8E5', '#2A4B58'),
   outside = c('#363A32', '#796157', '#C9BAA7', '#ECE6D1', '#9D9282'),
-  earthling = c('#272D34', '#A53B2B', '#B29467', '#467CB0', '#3C6F33'), color_palette)
-  # hours = c("#000", "#000", "#000", "#000", "#000"),
-  # heathen = c("#000", "#000", "#000", "#000", "#000"),
-  # reality = c("#000", "#000", "#000", "#000", "#000"),
-  # the_next_day = c("#000", "#000", "#000", "#000", "#000"),
-  # blackstar = c("#000", "#000", "#000", "#000", "#000"),
-  # toy = c("#000", "#000", "#000", "#000", "#000")
-  #), color_palette)
+  earthling = c('#272D34', '#A53B2B', '#B29467', '#467CB0', '#3C6F33'),
+  hours = c('#343951', '#B4614B', '#C6D9E3', '#94AFC9', '#4F849C'),
+  heathen = c('#232217', '#E17E2C', '#DBCBB1', '#948870', '#5E533F'),
+  reality = c('#2B2121', '#6C7A76', '#E6E3D6', '#C0AE8D', '#C03F2F'),
+  the_next_day = c('#191617', '#525151', '#EDEDED', '#B8B7B7', '#848283'),
+  blackstar = c('#181818', '#7D7D7D', '#B0B0B0', '#E5E5E5', '#4A4A4A'),
+  toy = c('#60605C', '#7E7A75', '#ECEDE9', '#C3CBBE', '#9DA09B'), color_palette)
 
 #' @rdname album_palettes
 #' @export

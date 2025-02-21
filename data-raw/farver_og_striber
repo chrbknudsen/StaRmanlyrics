@@ -64,5 +64,21 @@ eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/4/44/Outsi
 earthling
 eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/b/bf/Earthling_%28album%29.jpg")
 
+hours
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/6/64/Bowie_Hours.jpg")
 
+heathen
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/e/ec/Heathen_%28David_Bowie_album_-_cover_art%29.jpg")
+
+reality
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/7/7b/David_Bowie_-_Reality.jpg")
+
+the_next_day
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/4/4a/David_Bowie_-_The_Next_Day.png")
+
+blackstar
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/2/2d/Blackstar_%28Front_Cover%29.svg")
+
+toy
+eyedroppeR::extract_pal(5, "https://upload.wikimedia.org/wikipedia/en/8/83/David_Bowie_-_Toy.png")
 
