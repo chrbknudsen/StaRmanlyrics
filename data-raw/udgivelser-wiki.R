@@ -211,7 +211,7 @@ library(spotifyr)
 hm <- spotifyr::get_artist_audio_features(artist = "David Bowie", authorization = get_spotify_access_token(client_id = hemmeligheder[["client_id"]],
                                                                                                      client_secret = hemmeligheder[["client_secret"]]))
 # og det betyder faktisk at vi har størstedelen af data på bowie sangene nu.
-
+hemmeligheder
 install.packages("spotifyr")
 view(hm)
 library(tidyverse)

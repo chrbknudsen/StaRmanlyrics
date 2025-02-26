@@ -28,6 +28,8 @@ lyrics_from_url <- function(url){
 lyrics_til_oprensning <- lyrics_from_url(url)
 
 
+
+
 <span.*?>
 
   clipr::write_clip()
